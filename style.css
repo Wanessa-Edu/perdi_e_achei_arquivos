@@ -1,0 +1,96 @@
+/*
+style.css é uma folha de estilos, ou seja, controla a aparência da página;
+Uma sugestão de organização
+1º colocar as variáveis
+2º Reset
+3º Demais configurações
+..nº Medias queryes (resposividade para telas menores)
+*/
+
+/**para utilizar as variaveis eu devo declarar em :root;
+ facilitando a manutenção, o :root também é chamado de 
+ escopo global*/
+
+:root{
+    /*não é rute*/
+    --azul: #0050a0; /*cor principal */
+    --azul-2:#0066cc; /*variação*/
+    --azul-escuro: #052b55; /*azul de tirulo*/
+    --azul-claro: #e6f0ff; /*azul para fundo*/
+    --verde: #1f8f4d; /**/
+    --amarelo: #f9b233; /**/
+    --texto: #1f2937; /**/
+    --cinza: #667085; /**/
+    --linha: #dbe6f3; /**/
+    --fundo: #f4f7fb; /**/
+    --raio: #24px; /*raio padrão para cantos arredondados*/
+    --sombra: #0 18px 45px rgba(11, 39, 75, 0.14); /* sombra */
+}
+
+/*reset e configuraçoes globais*/
+*{box-sizing: border-box;}
+
+/* page speed insights */
+
+html{scroll-behavior: smooth; /* rolagem de pagina suave */}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto); /* quando for chamar a variavel devo usar var(--nome_da_variavel); */
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* vou trabalhar com o hero */
+.hero{
+    min-height: 560px;
+    padding: 28px 6vw 86px; /* 6vw = 6% da largura da janela */
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+.nav{
+    max-width: 1180px; /* limitando a largura para não esticar em telas grandes */
+    margin: 0 auto 68px; /*centraliza e cria espaço */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px; /*espaço entre itens*/
+    position: relative;
+    z-index: 2; /* garante a sobreposição do menu */
+}
+.marca{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.2rem; /* responsivo */
+}
+marca-img{
+    width: 48px;
+    height: 48px;
+}
+nav-links{
+    display: flex;
+    gap: 22;
+    flex-wrap: wrap; /* se nao tiver espaço, quebra a linha */
+}
+.nav-links a{
+    color: rgba(225, 225, 225, 0.9);
+    text-decoration: none;
+    font-weight: 800;
+}
+.nav-links a:hover{
+    color: red;
+}
+.hero-conteudo {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+}
